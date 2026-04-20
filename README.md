@@ -1,16 +1,38 @@
-# React + Vite
+# React 数独游戏（JavaScript + Vite + React）
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个纯前端的数独游戏，实现了基础的可玩流程：生成题目、填写、冲突提示、答案检查、计时与本地保存/恢复。
 
-Currently, two official plugins are available:
+## 功能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 新游戏（随机生成题盘）
+- 难度选择：简单 / 中等 / 困难
+- 计时器：显示已用时间
+- 检查答案：
+  - 未填完会提示
+  - 填完并正确会给出完成提示
+  - 错误会高亮冲突格
+- 本地保存进度：刷新页面后可恢复
 
-## React Compiler
+## 启动
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+在项目目录运行：
 
-## Expanding the ESLint configuration
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+浏览器打开：`http://localhost:5173/`
+
+## 构建
+
+```bash
+npm run build
+```
+
+## 代码位置（快速了解）
+
+- 数独算法：`src/utils/sudoku.js`
+- 本地存档：`src/utils/storage.js`
+- 棋盘组件：`src/components/SudokuBoard.jsx`
+- 控件组件：`src/components/Controls.jsx`
+- 入口与页面编排：`src/App.jsx`、`src/main.jsx`
